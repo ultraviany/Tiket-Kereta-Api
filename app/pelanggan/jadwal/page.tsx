@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { getServerCookie } from "@/helper/server-cookie"
 import FilterJadwal from "./FilterJadwal"
 import { ScheduleType } from "@/app/karyawan/types"
@@ -30,10 +31,10 @@ const getJadwal = async (
 
 type Props = {
     //menangkap data yang dikirimkan melalui url
-    searchParams: {
+    searchParams:Promise< {
         departured_location?: string
         arrived_location?: string
-    }
+    }>
 }
 const JadwalPage = async (myProp: Props) => {
     const departured_location =

@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 //function to get all data kereta 
 import { getServerCookie } from "@/helper/server-cookie"
 import { KeretaType } from "../types"

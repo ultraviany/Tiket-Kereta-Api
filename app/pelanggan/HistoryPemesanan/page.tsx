@@ -1,3 +1,4 @@
+export const dynamic = "force-dynamic";
 import { axiosInstance } from '@/helper/api'
 import { getServerCookie } from '@/helper/server-cookie'
 import React from 'react'
@@ -29,10 +30,10 @@ const GetDataHistory = async (
 }
 
 type Props = {
-    searchParams: {
+    searchParams: Promise <{
         start_date?: string
         end_date?: string
-    }
+    }>
 }
 const page = async (myProp: Props) => {
     const start_date = (await myProp.searchParams).start_date?.toString() || ""

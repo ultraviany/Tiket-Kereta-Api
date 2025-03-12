@@ -1,7 +1,7 @@
 /**function to call detail kereta
  * that include gerbong dan kursi
  */
-
+export const dynamic = "force-dynamic";
 import { getServerCookie } from "@/helper/server-cookie";
 import { KeretaType } from "../../types";
 import { axiosInstance } from "@/helper/api";
@@ -35,16 +35,16 @@ const getDetailKereta = async (
 }
 
 type props = {
-    params: {
+    params: Promise <{
         // sesuai dengan nama folder
         id_kereta: string
-    }
+    }>
 }
 const DetailKeretaPage = async (
     myProp: props
 ) => {
     // get value of selected "id_kereta"
-    const id_kereta = myProp.params.id_kereta
+    const id_kereta = (await (myProp.params)).id_kereta
     // get data from backend
     const dataKereta = await getDetailKereta(id_kereta)
     return (
