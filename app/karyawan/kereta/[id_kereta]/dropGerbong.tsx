@@ -75,10 +75,10 @@ const DropGerbong = (myProp: props) => {
                 <form onSubmit={e => handleSubmit(e)}>
                     <div className="w-full p-3 rounded-t-lg">
                         <h1 className="font-semibold text-lg ">
-                            Edit Gerbong Kereta
+                            Hapus Gerbong Kereta
                         </h1>
                         <span className="text-sm text-slate-500">
-                            Pastikan data yang diisi sudah benar
+                            Pastikan data yang Hapus sudah benar
                         </span>
                     </div>
 
