@@ -18,7 +18,7 @@ const EditUser = (myProp: props) => {
     const [address, setAddress] = useState<string>("")
     const [phone, setPhone] = useState<string>("")
     const [show, setShow] = useState<boolean>(false)
-    
+
 
 
     const router = useRouter()
@@ -29,8 +29,8 @@ const EditUser = (myProp: props) => {
         setName(myProp.user.name)
         setAddress(myProp.user.address)
         setPhone(myProp.user.phone)
-        
-        
+
+
     }
 
     const closeModal = () => {
@@ -79,6 +79,7 @@ const EditUser = (myProp: props) => {
                 }
             )
         }
+
     }
 
     return (
