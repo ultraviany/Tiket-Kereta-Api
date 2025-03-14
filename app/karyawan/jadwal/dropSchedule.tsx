@@ -28,7 +28,7 @@ const DropSchedule = (myProp: props) => {
         try {
             e.preventDefault()
             const TOKEN = getCookie(`token`)
-            const url = `/train/${myProp.jadwal.id}`
+            const url = `/schedule/${myProp.jadwal.id}`
 
             // hit endpoint to add kereta
             const response: any = await axiosInstance
