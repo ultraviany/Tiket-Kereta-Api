@@ -1,6 +1,9 @@
 "use client"
 
 import { AdminType } from "../types"
+import DropUser from "./dropUser"
+import EditUser from "./editUser"
+import ResetPassword from "./resetPw"
 
 type props = {
     item: AdminType
@@ -29,7 +32,12 @@ const User = (myProp: props) => {
                     Opsi
                 </small>
                 <div className="flex gap-2 items-center">
-                   
+                    <EditUser
+                        user={myProp.item} />
+                    <DropUser
+                        user={myProp.item} />
+                    <ResetPassword
+                        user={myProp.item} />
                 </div>
             </div>
         </div>
