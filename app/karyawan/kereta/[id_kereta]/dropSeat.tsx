@@ -87,7 +87,7 @@ const DropKursi = (myProp: props) => {
 
                     {/* modal body */}
                     <div className="w-full p-3">
-                        Ya, saya yakin
+                        Apakah anda yakin ingin menghapus dara ini?
                     </div>
 
                     {/* modal footer */}
@@ -100,7 +100,7 @@ const DropKursi = (myProp: props) => {
                         <button
                             type="submit"
                             className="px-4 py-2 rounded-md bg-sky-700 hover:bg-sky-600 text-white">
-                            Yes, i'm sure
+                            Ya, saya yakin
                         </button>
                     </div>
                 </form>
