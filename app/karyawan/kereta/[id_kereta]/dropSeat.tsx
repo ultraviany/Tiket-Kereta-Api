@@ -87,7 +87,7 @@ const DropKursi = (myProp: props) => {
 
                     {/* modal body */}
                     <div className="w-full p-3">
-                        Apakah anda yakin ingin menghapus dara ini?
+                        Apakah anda yakin ingin menghapus data ini?
                     </div>
 
                     {/* modal footer */}
