@@ -82,13 +82,13 @@ const AddUser = () => {
         <div>
             <ToastContainer containerId={`toastAdd`} />
             <button type="button" onClick={() => openModal()} className="px-4 py-2 bg-lime-600 rounded-md hover:bg-lime-500 text-white">
-                Tambah User
+                Tambah Pelanggan
             </button>
             <Modal isShow={show}>
                 <form onSubmit={e => handleSubmit(e)}>
                     <div className="w-full p-3 rounded-t-lg">
                         <h1 className="font-semibold text-lg ">
-                            Tambah User
+                            Tambah Pelanggan
                         </h1>
                         <span className="text-sm text-slate-500">
                             Pastikan data yang diisi sudah benar

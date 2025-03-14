@@ -13,7 +13,7 @@ const User = (myProp: props) => {
         <div className="w-full flex flex-wrap my-2 border rounded-md">
             <div className="w-full md:w-4/12 p-1 flex flex-col">
                 <small className="text-sm text-sky-700 font-medium">
-                    Nama Admin
+                    Nama Pelanggan
                 </small>
                 <span>
                     {myProp.item.name}
@@ -21,7 +21,7 @@ const User = (myProp: props) => {
             </div>
             <div className="w-full md:w-4/12 p-2 flex flex-col">
                 <small className="text-sm text-sky-700 font-medium">
-                    Username Admin
+                    Username Pelanggan
                 </small>
                 <span>
                     {myProp.item.user_details.username}
