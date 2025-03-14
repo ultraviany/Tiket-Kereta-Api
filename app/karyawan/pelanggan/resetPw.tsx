@@ -28,7 +28,7 @@ const ResetPassword = (myProp: props) => {
         try {
             e.preventDefault()
             const TOKEN = getCookie(`token`)
-            const url = `/employee/${myProp.user.id}`
+            const url = `/customer/${myProp.user.id}`
             const requestData = {
                 password
             }
