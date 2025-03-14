@@ -6,6 +6,9 @@ import { getCookie } from "@/helper/client-cookie"
 import { useRouter } from "next/navigation"
 import { FormEvent, useState } from "react"
 import { toast, ToastContainer } from "react-toastify"
+import { AdminType } from "../types"
+
+
 
 const AddUser = () => {
     const [nik, setNik] = useState<string>("")
@@ -74,94 +77,102 @@ const AddUser = () => {
             )
         }
     }
+
     return (
         <div>
             <ToastContainer containerId={`toastAdd`} />
             <button type="button" onClick={() => openModal()} className="px-4 py-2 bg-lime-600 rounded-md hover:bg-lime-500 text-white">
-                Tambah Pelanggan
+                Tambah User
             </button>
             <Modal isShow={show}>
-                <form>
+                <form onSubmit={e => handleSubmit(e)}>
                     <div className="w-full p-3 rounded-t-lg">
                         <h1 className="font-semibold text-lg ">
-                            Tambah Pelanggan
+                            Tambah User
                         </h1>
                         <span className="text-sm text-slate-500">
                             Pastikan data yang diisi sudah benar
                         </span>
                     </div>
-                    <div className="my-2 border rounded-md">
-                        <small className="text-sm font-semibold text-sky-600">
-                            Nik
-                        </small>
-                        <input type="text" id={nik}
-                            value={nik}
-                            onChange={e => setNik
-                                (e.target.value)}
-                            required={true}
-                            className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b" />
-                    </div>
-                    <div className="my-2 border rounded-md">
-                        <small className="text-sm font-semibold text-sky-600">
-                            Nama Pelanggan
-                        </small>
-                        <input type="text" id={`name`}
-                            value={name}
-                            onChange={e => setName(e.target.value)}
-                            required={true}
-                            className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
-                        />
+
+                    {/* modal body */}
+                    <div className="w-full p-3">
+                        <div className="my-2 border rounded-md">
+                            <small className="text-sm font-semibold text-sky-600">
+                                Nik
+                            </small>
+                            <input type="text" id={nik}
+                                value={nik}
+                                onChange={e => setNik
+                                    (e.target.value)}
+                                required={true}
+                                className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
+                            />
+                        </div>
+
+                        <div className="my-2 border rounded-md">
+                            <small className="text-sm font-semibold text-sky-600">
+                                Nama Pelanggan
+                            </small>
+                            <input type="text" id={`name`}
+                                value={name}
+                                onChange={e => setName(e.target.value)}
+                                required={true}
+                                className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
+                            />
+                        </div>
+
+                        <div className="my-2 border rounded-md">
+                            <small className="text-sm font-semibold text-sky-600">
+                                Alamat
+                            </small>
+                            <input type="text" id={`address`}
+                                value={address}
+                                onChange={e => setAddress(e.target.value)}
+                                required={true}
+                                className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
+                            />
+                        </div>
+
+                        <div className="my-2 border rounded-md">
+                            <small className="text-sm font-semibold text-sky-600">
+                                Nomer Telfon
+                            </small>
+                            <input type="text" id={`phone`}
+                                value={phone}
+                                onChange={e => setPhone(e.target.value)}
+                                required={true}
+                                className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
+                            />
+                        </div>
+
+                        <div className="my-2 border rounded-md">
+                            <small className="text-sm font-semibold text-sky-600">
+                                Username
+                            </small>
+                            <input type="text" id={`username`}
+                                value={username}
+                                onChange={e => setUsername(e.target.value)}
+                                required={true}
+                                className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
+                            />
+                        </div>
+
+                        <div className="my-2 border rounded-md">
+                            <small className="text-sm font-semibold text-sky-600">
+                                Password
+                            </small>
+                            <input type="text" id={`password`}
+                                value={password}
+                                onChange={e => setPassword(e.target.value)}
+                                required={true}
+                                className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
+                            />
+                        </div>
                     </div>
 
-                    <div className="my-2 border rounded-md">
-                        <small className="text-sm font-semibold text-sky-600">
-                            Alamat Pelanggan
-                        </small>
-                        <input type="text" id={`address`}
-                            value={address}
-                            onChange={e => setAddress(e.target.value)}
-                            required={true}
-                            className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
-                        />
-                    </div>
-
-                    <div className="my-2 border rounded-md">
-                        <small className="text-sm font-semibold text-sky-600">
-                            Nomer Telfon
-                        </small>
-                        <input type="text" id={`phone`}
-                            value={phone}
-                            onChange={e => setPhone(e.target.value)}
-                            required={true}
-                            className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
-                        />
-                    </div>
-
-                    <div className="my-2 border rounded-md">
-                        <small className="text-sm font-semibold text-sky-600">
-                            Username
-                        </small>
-                        <input type="text" id={`username`}
-                            value={username}
-                            onChange={e => setUsername(e.target.value)}
-                            required={true}
-                            className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
-                        />
-                    </div>
-
-                    <div className="my-2 border rounded-md">
-                        <small className="text-sm font-semibold text-sky-600">
-                            Password
-                        </small>
-                        <input type="text" id={`password`}
-                            value={password}
-                            onChange={e => setPassword(e.target.value)}
-                            required={true}
-                            className="w-full p-1 outline-none focus:border-b-sky-600 focus:border-b"
-                        />
-                    </div>
-                     {/* modal footer */}
-                     <div className="w-full p-3 rounded-b-lg flex items-center justify-end gap-2">
+                    {/* modal footer */}
+                    <div className="w-full p-3 rounded-b-lg flex items-center justify-end gap-2">
                         <button
                             type="button" onClick={() => closeModal()}
                             className="px-4 py-2 rounded-md bg-slate-700 hover:bg-slate-600 text-white">
@@ -174,9 +185,11 @@ const AddUser = () => {
                         </button>
                     </div>
                 </form>
-            </Modal>
-        </div >
-    )
 
+            </Modal>
+        </div>
+
+    )
 }
+
 export default AddUser
